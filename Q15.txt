@@ -1,0 +1,62 @@
+/*Classes and Objects
+1. Define a class SavingAccount (accNo, name, balance, minBalance). Define appropriate
+constructors and operations withdraw(), deposit(), viewBalance(). Create an object and perform
+operations.*/
+import java.util.Scanner
+class Q15()
+{
+var accno:Int=0
+var name:String=""
+var balance:Int=0
+var mb:Int=0
+class CA(var accno:Int=0,var name:String="",var balance:Int=0,var mb:Int=0)
+def withdraw()
+{
+val s=new Scanner(System.in)
+println("Enter withdraw balance")
+val w=s.nextInt
+if(balance>0 && balance>w)
+{
+balance=balance-w
+println("After withdraw amount: "+balance)
+}
+else if(w==0){
+println("enter some amount")
+}
+else if(balance==0)
+{
+println("Balance is 0 you can't withdraw")
+}
+else println("Balance Insufficient")
+}
+def deposit()
+{
+val s=new Scanner(System.in) println("Enter deposit balance") var d=s.nextInt
+balance=mb+d
+println("After deposit balance is: "+balance)
+}
+def view()
+{
+println("The balance is: "+balance)
+}
+}
+object Main
+{
+def main(args:Array[String])
+{
+val c = new CA()
+val s=new Scanner(System.in)
+var ch=s.nextInt
+do
+{
+println("enter your choice:\n1.withdraw\n2.Deposit\n3.view balance") val s=new Scanner(System.in)
+var ch=s.nextInt
+ch match{
+case 1 => c.withdraw()
+case 2 => c.deposit()
+case 3 => c.view()
+case _ => println("default")
+}
+}while(ch!=4)
+}
+}

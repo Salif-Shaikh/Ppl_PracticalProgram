@@ -1,0 +1,18 @@
+object Question6{
+	def main(args: Array[String])
+	{
+		val set1 = Set(1,2,3,4)
+		val set2 = Set(5,6,7,8)
+		println(set1)
+		println(set2)
+		val u=set1.union(set2)
+		println("Union of 2 sets is: ")
+		println(u)
+		val s=u.sum
+		println(s"Sum of elements of Set1: $s")
+		val Lar = u.max
+		val small = u.min
+		println("Largest Element:",Lar)
+		println("smallest Element:",small)
+	}
+}

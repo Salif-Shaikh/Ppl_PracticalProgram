@@ -1,0 +1,24 @@
+class Emp(val eno:Int,val name:String){
+def display() {
+println(s"Empno: $eno \n Name:$name\n\n")
+}
+}
+
+object Q5 extends App
+{
+val e1=new Emp(1,"Abc")
+val e2=new Emp(2,"Xyz")
+val e3=new Emp(3,"Pqr")
+val e4=new Emp(4,"Mnp")
+val map=Map(e1->"Math",e2->"CS",e3->"Stats",e4->"CS")
+var d:String=""
+for ((k,v)<-map)
+  if (k.name=="Xyz")
+     d=v
+
+for ((k,v)<-map)
+  if (v==d)
+     { k.display()
+        println("Department: "+v)
+     }
+}
